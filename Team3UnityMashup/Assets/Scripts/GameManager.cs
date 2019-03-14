@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public Transform playerSpawnPoint;
     public int playerLives;
+    public int currentScore;
+
+    public GameObject thePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +37,11 @@ public class GameManager : MonoBehaviour
             thePlayer.gameObject.SetActive(false);
 
         }
+    }
+
+    public void AddScore(int scoreToAdd)
+    {
+        currentScore += scoreToAdd;
     }
 }
 
