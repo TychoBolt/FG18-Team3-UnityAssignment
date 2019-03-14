@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public Transform playerSpawnPoint;
     public int playerLives;
+
+    public GameObject thePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
