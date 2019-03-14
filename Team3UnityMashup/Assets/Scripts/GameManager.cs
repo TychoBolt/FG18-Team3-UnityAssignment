@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Transform playerSpawnPoint;
     public int playerLives;
+    public int currentScore;
 
     public GameObject thePlayer;
 
@@ -36,6 +37,11 @@ public class GameManager : MonoBehaviour
             thePlayer.gameObject.SetActive(false);
 
         }
+    }
+
+    public void AddScore(int scoreToAdd)
+    {
+        currentScore += scoreToAdd;
     }
 }
 
