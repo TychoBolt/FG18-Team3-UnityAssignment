@@ -15,6 +15,7 @@ public class Controller2D : RayCastController
         public float SlopeAngle, SlopeAngleOld;
 
         public int FaceDirection;
+        public Vector2 Dir;
 
         public Vector2 DeltaMoveOld;
         public Vector2 SlopeNormal;
@@ -67,6 +68,7 @@ public class Controller2D : RayCastController
         if (DeltaMove.x != 0)
         {
             Collisions.FaceDirection = (int)Mathf.Sign(DeltaMove.x);
+            Collisions.Dir = new Vector2(PlayerInput.x, PlayerInput.y);
         }
 
         HorizontalCollision(ref DeltaMove);
@@ -294,5 +296,10 @@ public class Controller2D : RayCastController
             Collisions.SlopeAngle = SlopeAngle;
             Collisions.SlopeNormal = SlopeNormal;
         }
+    }
+
+    public Vector2 GetFaceDirection()
+    {
+        return Collisions.Dir;
     }
 }
