@@ -13,13 +13,15 @@ public class EnemyPatrolling : MonoBehaviour
     public float idleTime;
     bool isIdle = false;
     public int totalHealth = 10;
-    int currentHealt;
+    float currentHealt;
     Player player;
+    Weapon playerWeapon;
     
     void Start()
     {
         currentHealt = totalHealth;
         player = GetComponent<Player>();
+        playerWeapon = GetComponent<Weapon>();
     }
 
     void Update ()
@@ -39,7 +41,6 @@ public class EnemyPatrolling : MonoBehaviour
         {
             FlipOnDelay();
         }
-
     }
 
     void Flip()
@@ -66,17 +67,15 @@ public class EnemyPatrolling : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("Hit");
             FindObjectOfType<GameManager>().KillPlayer();
         }
     }
 
-    void TakeDamage(int amount)
+    void TakeDamage()
     {
-        currentHealt -= amount;
+        currentHealt -= playerWeapon.Damage;
         if (currentHealt <= 0)
         {
             Destroy(this);
