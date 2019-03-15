@@ -26,6 +26,12 @@ public class Bullet : MonoBehaviour
         //{
         //    enemy.TakeDamage();
         //}
+
+        if (HitInfo.GetComponent<EnemyPatrolling>() != null)
+        {
+            HitInfo.GetComponent<EnemyPatrolling>().TakeDamage();
+        }
+
         Destroy(gameObject);
     }
 }

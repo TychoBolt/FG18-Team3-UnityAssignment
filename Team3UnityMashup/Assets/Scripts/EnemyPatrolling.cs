@@ -14,15 +14,13 @@ public class EnemyPatrolling : MonoBehaviour
     bool isIdle = false;
     public int totalHealth = 10;
     float currentHealt;
-    Player player;
     Weapon playerWeapon;
     GameManager gameManager;
     
     void Start()
     {
         currentHealt = totalHealth;
-        player = GetComponent<Player>();
-        playerWeapon = GetComponent<Weapon>();
+        playerWeapon = GameObject.Find("Maincharacter")?.GetComponent<Weapon>();
         gameManager = GetComponent<GameManager>();
     }
 
@@ -73,15 +71,16 @@ public class EnemyPatrolling : MonoBehaviour
         {
             //FindObjectOfType<GameManager>().KillPlayer();
             //gameManager.KillPlayer();
+            Debug.Log("Hurt enemy");
         }
     }
 
-    void TakeDamage()
+    public void TakeDamage()
     {
         currentHealt -= playerWeapon.Damage;
         if (currentHealt <= 0)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }
