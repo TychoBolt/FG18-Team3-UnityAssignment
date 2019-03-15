@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
             Up = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("XButton"))
         {
             Shoot();
         }
