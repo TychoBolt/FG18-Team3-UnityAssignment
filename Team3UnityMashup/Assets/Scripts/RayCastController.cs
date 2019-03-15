@@ -17,7 +17,7 @@ public class RayCastController : MonoBehaviour
     [HideInInspector]
     public int VerticalRayCount;
 
-    [HideInInspector]
+    [Header("Mask for 'Ground', Also needs to be set in Controller2D script")]
     public LayerMask CollisionMask;
 
     [HideInInspector]
