@@ -42,6 +42,10 @@ public class Controller2D : RayCastController
     public CollisionInfo Collisions;
     Vector2 PlayerInput;
 
+    [Header("Click on the right circle and add main character")]
+    [Tooltip("This is for fliping the character, for now.")]
+    public SpriteRenderer PlayerSprite;
+
     void ResetFallingThroughPlatform()
     {
         Collisions.FallingThroughPlatform = false;
@@ -60,7 +64,6 @@ public class Controller2D : RayCastController
         Collisions.DeltaMoveOld = DeltaMove;
         PlayerInput = _PlayerInput;
 
-
         if (DeltaMove.y < 0)
         {
             DescendSlope(ref DeltaMove);
@@ -70,6 +73,16 @@ public class Controller2D : RayCastController
         {
             Collisions.FaceDirection = (int)Mathf.Sign(DeltaMove.x);
             Collisions.Dir = new Vector2(PlayerInput.x, PlayerInput.y);
+
+            if (Collisions.Dir.x > 0)
+            {
+                PlayerSprite.flipX = false;
+            }
+            else if (Collisions.Dir.x < 0)
+            {
+                PlayerSprite.flipX = true;
+            }
+
         }
 
         HorizontalCollision(ref DeltaMove);

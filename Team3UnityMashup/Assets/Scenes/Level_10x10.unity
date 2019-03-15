@@ -122,11 +122,13 @@ GameObject:
   m_Component:
   - component: {fileID: 904440752}
   - component: {fileID: 904440751}
+  - component: {fileID: 904440753}
+  - component: {fileID: 904440755}
+  - component: {fileID: 904440754}
   - component: {fileID: 904440750}
   - component: {fileID: 904440749}
   - component: {fileID: 904440748}
-  - component: {fileID: 904440753}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Maincharacter
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -140,47 +142,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904440747}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d9aba167cce3744995ee2e163397fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1bef91d460729b34fba7e93104bf067b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HorizontalRayCount: 0
-  VerticalRayCount: 0
-  CollisionMask:
-    serializedVersion: 2
-    m_Bits: 0
-  HorizontalRaySpacing: 0
-  VerticalRaySpacing: 0
-  BoxCollider: {fileID: 0}
-  MaxSlopeAngle: 50
---- !u!61 &904440749
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 904440747}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2, y: 2.8}
-    newSize: {x: 1.2, y: 2.8}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.16, y: 2.76}
-  m_EdgeRadius: 0
---- !u!114 &904440750
+--- !u!114 &904440749
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc74d5e1d4191345b21223e5dec798c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controller: {fileID: 0}
+  Controller: {fileID: 904440750}
   MaxJumpHeight: 4
   MinJumpHeight: 1
   TimeToJumpApex: 0.4
@@ -204,6 +171,28 @@ MonoBehaviour:
   WallJumpClimb: {x: 0, y: 0}
   WallJumpOff: {x: 0, y: 0}
   WallLeap: {x: 0, y: 0}
+--- !u!114 &904440750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904440747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d9aba167cce3744995ee2e163397fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalRayCount: 0
+  VerticalRayCount: 0
+  CollisionMask:
+    serializedVersion: 2
+    m_Bits: 256
+  HorizontalRaySpacing: 0
+  VerticalRaySpacing: 0
+  BoxCollider: {fileID: 0}
+  MaxSlopeAngle: 50
+  PlayerSprite: {fileID: 904440751}
 --- !u!212 &904440751
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -286,7 +275,53 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!61 &904440754
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904440747}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.2, y: 2.8}
+    newSize: {x: 1.2, y: 2.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2, y: 2.8}
+  m_EdgeRadius: 0
+--- !u!114 &904440755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904440747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1badd7221df6a448a66eec7c4b77f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HorizontalRayCount: 0
+  VerticalRayCount: 0
+  CollisionMask:
+    serializedVersion: 2
+    m_Bits: 256
+  HorizontalRaySpacing: 0
+  VerticalRaySpacing: 0
+  BoxCollider: {fileID: 0}
 --- !u!1 &1239684519
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +378,7 @@ GameObject:
   - component: {fileID: 1387256946}
   - component: {fileID: 1387256945}
   - component: {fileID: 1387256947}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3552,7 +3587,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 13.5
+  orthographic size: 26.453054
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
