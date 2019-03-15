@@ -9,19 +9,21 @@ public class EnemyPatrolling : MonoBehaviour
     bool hasFlipped = false;
     public GameObject wayPointOne;
     public GameObject wayPointTwo;
-    public Transform groundCheckPos;
+    //public Transform groundCheckPos;
     public float idleTime;
     bool isIdle = false;
     public int totalHealth = 10;
     float currentHealt;
     Player player;
     Weapon playerWeapon;
+    GameManager gameManager;
     
     void Start()
     {
         currentHealt = totalHealth;
         player = GetComponent<Player>();
         playerWeapon = GetComponent<Weapon>();
+        gameManager = GetComponent<GameManager>();
     }
 
     void Update ()
@@ -29,10 +31,10 @@ public class EnemyPatrolling : MonoBehaviour
         if (!isIdle)
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         
-        RaycastHit2D groundCheck = Physics2D.Raycast(groundCheckPos.position, Vector2.down, 2f);
-
-        if (groundCheck.collider == null || groundCheck.collider.gameObject.layer == 10)
-            FlipOnDelay();
+        //RaycastHit2D groundCheck = Physics2D.Raycast(groundCheckPos.position, Vector2.down, 2f);
+            
+        //if (groundCheck.collider == null || groundCheck.collider.gameObject.layer == 10)
+        //    FlipOnDelay();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -69,7 +71,8 @@ public class EnemyPatrolling : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            FindObjectOfType<GameManager>().KillPlayer();
+            //FindObjectOfType<GameManager>().KillPlayer();
+            //gameManager.KillPlayer();
         }
     }
 
