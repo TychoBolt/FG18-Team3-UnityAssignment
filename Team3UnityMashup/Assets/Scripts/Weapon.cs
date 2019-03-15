@@ -14,9 +14,9 @@ public class Weapon : MonoBehaviour
     public Controller2D Controller;
 
     private Vector2 Dir;
-    Vector2 WeaponRight = new Vector2(0.7f, 0f);
-    Vector2 WeaponLeft = new Vector2(-0.7f, 0f);
-    Vector2 WeaponUp = new Vector2(0f, 0.7f);
+    Vector2 WeaponRight = new Vector2(1.2f, 0f);
+    Vector2 WeaponLeft = new Vector2(-1.2f, 0f);
+    Vector2 WeaponUp = new Vector2(0f, 1.6f);
 
     bool Right, Left, Up;
 
