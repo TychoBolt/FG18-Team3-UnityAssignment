@@ -35,6 +35,7 @@ public class Controller2D : RayCastController
         }
     }
 
+    [HideInInspector]
     [Header("Angle for going up/down slopes")]
     public float MaxSlopeAngle = 50;
 
