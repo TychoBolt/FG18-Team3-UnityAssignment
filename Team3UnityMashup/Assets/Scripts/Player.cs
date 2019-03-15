@@ -21,14 +21,19 @@ public class Player : MonoBehaviour
     public float AccelerationTimeGrounded = 0.1f;
     private float VelocityXSmoothing;
 
+    [HideInInspector]
     [Header("Wall slide settings")]
     public float MaxWallSlideSpeed = 3;
+    [HideInInspector]
     public float WallStickTime = 0.25f;
     float TimeToWallUnstick;
 
+    [HideInInspector]
     [Header("Wall jump settings")]
     public Vector2 WallJumpClimb;
+    [HideInInspector]
     public Vector2 WallJumpOff;
+    [HideInInspector]
     public Vector2 WallLeap;
 
     private float MaxJumpVelocity;
@@ -54,7 +59,7 @@ public class Player : MonoBehaviour
         WallDirectionX = (Controller.Collisions.Left) ? -1 : 1;
 
         CalculateVelocity();
-        HandleWallSliding();
+        //HandleWallSliding();
 
         Controller.Move(Velocity * Time.deltaTime, DirectionalInput);
 
