@@ -69,8 +69,8 @@ public class EnemyPatrolling : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            //FindObjectOfType<GameManager>().KillPlayer();
-            //gameManager.KillPlayer();
+            FindObjectOfType<GameManager>().KillPlayer();                                    // ALEX SCRIPT
+            gameManager.KillPlayer();                                                        // ALEX SCRIPT
             Debug.Log("Hurt enemy");
         }
     }
@@ -80,6 +80,7 @@ public class EnemyPatrolling : MonoBehaviour
         currentHealt -= playerWeapon.Damage;
         if (currentHealt <= 0)
         {
+            FindObjectOfType<GameManager>().AddScore(GetComponent<PointValue>().value);     // ALEX SCRIPT
             Destroy(gameObject);
         }
     }
