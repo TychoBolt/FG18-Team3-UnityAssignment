@@ -70,7 +70,6 @@ public class EnemyPatrolling : MonoBehaviour
         if (other.gameObject.tag.Equals("Player"))
         {
             FindObjectOfType<GameManager>().KillPlayer();                                    // ALEX SCRIPT
-            gameManager.KillPlayer();                                                        // ALEX SCRIPT
             Debug.Log("Hurt enemy");
         }
     }
