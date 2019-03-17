@@ -46,7 +46,7 @@ public class Controller2D : RayCastController
     [Tooltip("This is for fliping the character, for now.")]
     public SpriteRenderer PlayerSprite;
 
-    void ResetFallingThroughPlatform()
+    private void ResetFallingThroughPlatform()
     {
         Collisions.FallingThroughPlatform = false;
     }
@@ -96,7 +96,6 @@ public class Controller2D : RayCastController
         {
             Collisions.Below = true;
         }
-
         transform.Translate(DeltaMove);
     }
 

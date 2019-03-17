@@ -20,7 +20,7 @@ public class Weapon : MonoBehaviour
 
     bool Right, Left, Up;
 
-    void Update()
+    private void Update()
     {
         Dir = Controller.GetFaceDirection();
 
@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
             Up = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.T) || Input.GetButtonDown("XButton"))
+        if (Input.GetButtonDown("Shoot"))
         {
             Shoot();
         }

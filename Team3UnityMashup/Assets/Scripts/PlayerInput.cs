@@ -5,22 +5,22 @@ public class PlayerInput : MonoBehaviour
 {
     Player _Player;
 
-    void Start()
+    private void Start()
     {
         _Player = GetComponent<Player>();
     }
 
-    void Update()
+    private void Update()
     {
         Vector2 DirectionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _Player.SetDirectionalInput(DirectionalInput);
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("AButton"))
+        if (Input.GetButtonDown("Jump"))
         {
             _Player.OnJumpInputDown();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) || Input.GetButtonUp("AButton"))
+        if (Input.GetButtonUp("Jump"))
         {
             _Player.OnJumpInputUp();
         }
