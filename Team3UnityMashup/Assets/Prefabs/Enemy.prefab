@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3651907926442282818}
   - component: {fileID: 3651907926442282819}
   - component: {fileID: 3651907926442282823}
+  - component: {fileID: 6304514031279650876}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -144,3 +145,16 @@ MonoBehaviour:
   wayPointTwo: {fileID: 0}
   idleTime: 1
   totalHealth: 10
+--- !u!114 &6304514031279650876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3651907926442282820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6cf4c2b17c68e409f118438369ce44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 100

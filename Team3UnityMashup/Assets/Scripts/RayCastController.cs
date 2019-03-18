@@ -46,7 +46,7 @@ public class RayCastController : MonoBehaviour
         RayCastOriginsCorners.TopRight = new Vector2(BoxBounds.max.x, BoxBounds.max.y);
     }
 
-    public void CalculateRaySpacing()
+    private void CalculateRaySpacing()
     {
         Bounds BoxBounds = BoxCollider.bounds;
         BoxBounds.Expand(SkinWidth * -2);

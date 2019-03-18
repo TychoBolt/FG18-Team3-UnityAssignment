@@ -41,11 +41,11 @@ public class Player : MonoBehaviour
     private float Gravity;
 
 
-    Vector2 DirectionalInput;
-    bool WallSliding;
-    int WallDirectionX;
+    private Vector2 DirectionalInput;
+    private bool WallSliding;
+    private int WallDirectionX;
 
-    void Start()
+    private void Start()
     {
         Controller = GetComponent<Controller2D>();
 
@@ -54,26 +54,39 @@ public class Player : MonoBehaviour
         MinJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(Gravity) * MinJumpHeight);
     }
 
-    void Update()
+    private void Update()
     {
         WallDirectionX = (Controller.Collisions.Left) ? -1 : 1;
 
         CalculateVelocity();
-        //HandleWallSliding();
+        //HandleWallSliding(); // We are not using wall sliding in the game
 
+
+        // This code is for slopes but interferes with jumping if the code for slopes isn't called / used
+        // Commented out and put Move function in FixedUpdate where it 'should' be
+
+        // by having the Move function in Update instead of FixedUpdate
+        // there was some strange vibrating on the player in the Y-axis 
+
+
+        //Controller.Move(Velocity * Time.deltaTime, DirectionalInput);
+
+        //if (Controller.Collisions.Above || Controller.Collisions.Below)
+        //{
+        //    if (Controller.Collisions.SlidingDownMaxSlope)
+        //    {
+        //        Velocity.y += Controller.Collisions.SlopeNormal.y * -Gravity * Time.deltaTime;
+        //    }
+        //    else
+        //    {
+        //        Velocity.y = 0;
+        //    }
+        //}
+    }
+
+   private void FixedUpdate()
+    {
         Controller.Move(Velocity * Time.deltaTime, DirectionalInput);
-
-        if (Controller.Collisions.Above || Controller.Collisions.Below)
-        {
-            if (Controller.Collisions.SlidingDownMaxSlope)
-            {
-                Velocity.y += Controller.Collisions.SlopeNormal.y * -Gravity * Time.deltaTime;
-            }
-            else
-            {
-                Velocity.y = 0;
-            }
-        }
     }
 
     public void SetDirectionalInput(Vector2 _DirectionalInput)
@@ -127,7 +140,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void HandleWallSliding()
+    private void HandleWallSliding()
     {
         WallSliding = false;
 
@@ -161,10 +174,15 @@ public class Player : MonoBehaviour
         }
     }
 
-    void CalculateVelocity()
+    private void CalculateVelocity()
     {
         float TargetVelocityX = DirectionalInput.x * MoveSpeed;
         Velocity.x = Mathf.SmoothDamp(Velocity.x, TargetVelocityX, ref VelocityXSmoothing, (Controller.Collisions.Below) ? AccelerationTimeGrounded : AccelerationTimeAirborne);
-        Velocity.y += Gravity * Time.deltaTime;
+
+        // If we are falling increase velocity
+        if (!Controller.Collisions.Below)
+        {
+            Velocity.y += Gravity * Time.deltaTime;
+        }
     }
 }
