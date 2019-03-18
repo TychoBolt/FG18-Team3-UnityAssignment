@@ -14,9 +14,19 @@ public class Bullet : MonoBehaviour
     {
         Debug.Log(HitInfo.name);
 
-        if (HitInfo.GetComponent<EnemyPatrolling>() != null)
+        //if (HitInfo.GetComponent<EnemyPatrolling>() != null)
+        //{
+        //    HitInfo.GetComponent<EnemyPatrolling>().TakeDamage();
+        //}
+        //if (HitInfo.GetComponent<Enemy>() != null)
+        //{
+        //    HitInfo.GetComponent<Enemy>().TakeDamage();
+        //}
+
+        Enemy enemy = HitInfo.GetComponent<Enemy>();
+        if (enemy != null)
         {
-            HitInfo.GetComponent<EnemyPatrolling>().TakeDamage();
+            enemy.TakeDamage();
         }
 
         Destroy(gameObject, 0.25f);
