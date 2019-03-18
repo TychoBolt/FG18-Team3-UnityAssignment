@@ -192,8 +192,8 @@ MonoBehaviour:
   MaxJumpHeight: 4
   MinJumpHeight: 1
   TimeToJumpApex: 0.4
-  MoveSpeed: 10
-  AccelerationTimeAirborne: 0.2
+  MoveSpeed: 8
+  AccelerationTimeAirborne: 0
   AccelerationTimeGrounded: 0.1
   MaxWallSlideSpeed: 3
   WallStickTime: 0.25
