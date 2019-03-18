@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         {
             thePlayer.gameObject.SetActive(false);
 
-            lifeText.text = "NO LIVES";
+            lifeText.text = "Game Over";
 
         }
     }

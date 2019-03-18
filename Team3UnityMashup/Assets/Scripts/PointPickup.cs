@@ -19,9 +19,11 @@ public class PointPickup : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
+        { 
 
         FindObjectOfType<GameManager>().AddScore(GetComponent<PointValue>().value);
         Destroy(gameObject);
+        }
     }
 
 }
