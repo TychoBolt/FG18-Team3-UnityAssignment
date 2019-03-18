@@ -49,7 +49,7 @@ public class Weapon : MonoBehaviour
             Up = false;
         }
 
-        if (Input.GetButtonDown("Shoot"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }
