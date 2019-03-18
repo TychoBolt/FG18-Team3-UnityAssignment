@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrolling : MonoBehaviour
+public class EnemyPatrolling : Enemy
 {
-    public float speed;
     bool movingRight = true;
     bool hasFlipped = false;
     public GameObject wayPointOne;
@@ -19,9 +18,9 @@ public class EnemyPatrolling : MonoBehaviour
     
     void Start()
     {
-        currentHealt = totalHealth;
+        //currentHealt = totalHealth;
         playerWeapon = GameObject.Find("Maincharacter")?.GetComponent<Weapon>();
-        gameManager = GetComponent<GameManager>();
+        //gameManager = GetComponent<GameManager>();
     }
 
     void Update ()
@@ -65,17 +64,16 @@ public class EnemyPatrolling : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag.Equals("Player"))
-        {
-            //FindObjectOfType<GameManager>().KillPlayer();
-            //gameManager.KillPlayer();
-            Debug.Log("Hurt enemy");
-        }
-    }
+    //public void TakeDamage()
+    //{
+    //    currentHealt -= playerWeapon.Damage;
+    //    if (currentHealt <= 0)
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
-    public void TakeDamage()
+    public override void TakeDamage()
     {
         currentHealt -= playerWeapon.Damage;
         if (currentHealt <= 0)
