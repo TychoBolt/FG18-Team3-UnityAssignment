@@ -11,17 +11,9 @@ public class EnemyPatrolling : Enemy
     //public Transform groundCheckPos;
     public float idleTime;
     bool isIdle = false;
-    public int totalHealth = 10;
-    float currentHealt;
-    Weapon playerWeapon;
+
     GameManager gameManager;
     
-    void Start()
-    {
-        //currentHealt = totalHealth;
-        playerWeapon = GameObject.Find("Maincharacter")?.GetComponent<Weapon>();
-        //gameManager = GetComponent<GameManager>();
-    }
 
     void Update ()
     {
@@ -64,21 +56,4 @@ public class EnemyPatrolling : Enemy
         }
     }
 
-    //public void TakeDamage()
-    //{
-    //    currentHealt -= playerWeapon.Damage;
-    //    if (currentHealt <= 0)
-    //    {
-    //        Destroy(gameObject);
-    //    }
-    //}
-
-    public override void TakeDamage()
-    {
-        currentHealt -= playerWeapon.Damage;
-        if (currentHealt <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 }
