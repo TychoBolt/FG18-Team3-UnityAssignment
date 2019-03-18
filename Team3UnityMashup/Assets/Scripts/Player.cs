@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
     private bool WallSliding;
     private int WallDirectionX;
 
+    private float MaxGravity = -20f;
+
     private void Start()
     {
         Controller = GetComponent<Controller2D>();
@@ -183,6 +185,10 @@ public class Player : MonoBehaviour
         if (!Controller.Collisions.Below)
         {
             Velocity.y += Gravity * Time.deltaTime;
+            if (Velocity.y < MaxGravity)
+            {
+                Velocity.y = MaxGravity;
+            }
         }
     }
 }
