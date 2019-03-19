@@ -23,10 +23,9 @@ public class GameManager : MonoBehaviour
         scoreText.text = "SCORE: " + currentScore;
     }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+       DontDestroyOnLoad(gameObject);
     }
 
     public void KillPlayer()

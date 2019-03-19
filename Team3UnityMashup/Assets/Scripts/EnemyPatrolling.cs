@@ -8,7 +8,6 @@ public class EnemyPatrolling : Enemy
     bool hasFlipped = false;
     public GameObject wayPointOne;
     public GameObject wayPointTwo;
-    //public Transform groundCheckPos;
     public float idleTime;
     bool isIdle = false;
     
@@ -17,11 +16,6 @@ public class EnemyPatrolling : Enemy
     {
         if (!isIdle)
             transform.Translate(Vector2.right * speed * Time.deltaTime);
-        
-        //RaycastHit2D groundCheck = Physics2D.Raycast(groundCheckPos.position, Vector2.down, 2f);
-            
-        //if (groundCheck.collider == null || groundCheck.collider.gameObject.layer == 10)
-        //    FlipOnDelay();
     }
 
     void OnTriggerEnter2D(Collider2D other)
