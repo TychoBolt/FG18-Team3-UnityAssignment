@@ -11,8 +11,6 @@ public class EnemyPatrolling : Enemy
     //public Transform groundCheckPos;
     public float idleTime;
     bool isIdle = false;
-
-    GameManager gameManager;
     
 
     void Update ()
