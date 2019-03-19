@@ -61,5 +61,11 @@ public class GameManager : MonoBehaviour
         numberOfKeys += 1;
         Debug.Log(numberOfKeys);
     }
+
+    public void ResetKeys()
+    {
+        numberOfKeys -= 3;
+        Debug.Log(numberOfKeys);
+    }
 }
 

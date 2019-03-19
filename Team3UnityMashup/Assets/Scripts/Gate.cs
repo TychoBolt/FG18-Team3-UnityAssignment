@@ -10,7 +10,7 @@ public class Gate : MonoBehaviour
     void Start()
     {
         manager = GameObject.FindObjectOfType<GameManager>();
-        totalNumberOfPickups = GameObject.FindObjectsOfType(typeof(PointPickup)).Length;
+      //  totalNumberOfPickups = GameObject.FindObjectsOfType(typeof(PointPickup)).Length;
     }
 
     // Update is called once per frame
@@ -21,11 +21,14 @@ public class Gate : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Player") && manager.currentScore == (totalNumberOfPickups * 50))
+        // if (other.gameObject.tag.Equals("Player") && manager.currentScore == (totalNumberOfPickups * 50))
+        if (other.gameObject.tag.Equals("Player") && manager.numberOfKeys == 3)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Open gate");
+                FindObjectOfType<GameManager>().ResetKeys();
+                Destroy(gameObject);
             }
         }
     }
