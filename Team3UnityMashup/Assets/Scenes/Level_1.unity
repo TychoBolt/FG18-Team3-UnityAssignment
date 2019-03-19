@@ -1693,7 +1693,7 @@ GameObject:
   - component: {fileID: 1239684520}
   m_Layer: 0
   m_Name: Grid
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 1387256947}
   m_Layer: 8
   m_Name: Tilemap
-  m_TagString: Untagged
+  m_TagString: Tiles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6564,6 +6564,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1e7a01db6d8cf646822f153643e6395, type: 3}
+<<<<<<< HEAD
 --- !u!1 &859759480886653577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 859759480886653577, guid: 5fb7ffe7f120ea946b0fd8e2a76b5879,
@@ -6682,6 +6683,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fb7ffe7f120ea946b0fd8e2a76b5879, type: 3}
+=======
+>>>>>>> 9b7d27d7bcc936ed3f8619ad8bffd39baf0db88f
 --- !u!1001 &2880104435894960992
 PrefabInstance:
   m_ObjectHideFlags: 0

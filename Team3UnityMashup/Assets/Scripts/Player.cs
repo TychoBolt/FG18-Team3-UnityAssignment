@@ -106,6 +106,8 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
+      //  animator.SetBool("IsJumpStart?", true);     //ALEX
+
         if (WallSliding)
         {
             if (WallDirectionX == DirectionalInput.x)
@@ -127,6 +129,9 @@ public class Player : MonoBehaviour
 
         if (Controller.Collisions.Below)
         {
+         // animator.SetBool("IsJumpStart?", false);
+         // animator.SetBool("IsJumpFall?", true);
+
             if (Controller.Collisions.SlidingDownMaxSlope)
             {
                 if (DirectionalInput.x != -Mathf.Sign(Controller.Collisions.SlopeNormal.x)) // Not jumping against max slope
@@ -138,6 +143,7 @@ public class Player : MonoBehaviour
             else
             {
                 Velocity.y = MaxJumpVelocity;
+
             }
         }
     }
@@ -196,7 +202,9 @@ public class Player : MonoBehaviour
             if (Velocity.y < MaxGravity)
             {
                 Velocity.y = MaxGravity;
+
             }
         }
+
     }
 }
