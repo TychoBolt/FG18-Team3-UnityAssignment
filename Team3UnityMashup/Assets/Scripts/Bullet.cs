@@ -28,8 +28,8 @@ public class Bullet : MonoBehaviour
         {
             enemy.TakeDamage();
             Destroy(gameObject, 0.01f);
-     
-        
+
+        }
     }
 
 }
