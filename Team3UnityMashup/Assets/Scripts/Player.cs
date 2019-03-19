@@ -44,12 +44,14 @@ public class Player : MonoBehaviour
     private Vector2 DirectionalInput;
     private bool WallSliding;
     private int WallDirectionX;
+    private Animator animator;
 
     private float MaxGravity = -20f;
 
     private void Start()
     {
         Controller = GetComponent<Controller2D>();
+        animator = GetComponent<Animator>();
 
         Gravity = -((2 * MaxJumpHeight) / Mathf.Pow(TimeToJumpApex, 2));
         MaxJumpVelocity = Mathf.Abs(Gravity) * TimeToJumpApex;
@@ -89,6 +91,12 @@ public class Player : MonoBehaviour
    private void FixedUpdate()
     {
         Controller.Move(Velocity * Time.deltaTime, DirectionalInput);
+        if (DirectionalInput.x > 0.1 || DirectionalInput.x < -0.1)
+            animator.SetBool("IsRunning?", true);
+        else
+        {
+            animator.SetBool("IsRunning?", false);
+        }
     }
 
     public void SetDirectionalInput(Vector2 _DirectionalInput)
