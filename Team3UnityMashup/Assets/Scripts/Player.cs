@@ -97,6 +97,9 @@ public class Player : MonoBehaviour
         {
             animator.SetBool("IsRunning?", false);
         }
+
+       
+
     }
 
     public void SetDirectionalInput(Vector2 _DirectionalInput)
@@ -106,7 +109,7 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
-      //  animator.SetBool("IsJumpStart?", true);     //ALEX
+        animator.SetBool("IsJumpStart?", true);     //ALEX
 
         if (WallSliding)
         {
@@ -129,8 +132,8 @@ public class Player : MonoBehaviour
 
         if (Controller.Collisions.Below)
         {
-         // animator.SetBool("IsJumpStart?", false);
-         // animator.SetBool("IsJumpFall?", true);
+            //animator.SetBool("IsJumpStart?", false);
+            // animator.SetBool("IsJumpFall?", true);
 
             if (Controller.Collisions.SlidingDownMaxSlope)
             {
@@ -150,6 +153,7 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputUp()
     {
+        animator.SetBool("IsJumpStart?", false);
         if (Velocity.y > MinJumpVelocity)
         {
             Velocity.y = MinJumpVelocity;
@@ -189,6 +193,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
 
     private void CalculateVelocity()
     {
