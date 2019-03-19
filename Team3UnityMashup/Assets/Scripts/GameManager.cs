@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public int playerLives;
     public int currentScore;
 
+    public int numberOfKeys;
+
     public Text lifeText;
     public Text scoreText;
 
@@ -52,6 +54,12 @@ public class GameManager : MonoBehaviour
     {
         currentScore += scoreToAdd;
         scoreText.text = "SCORE: " + currentScore;
+    }
+
+    public void AddKey()
+    {
+        numberOfKeys += 1;
+        Debug.Log(numberOfKeys);
     }
 }
 
