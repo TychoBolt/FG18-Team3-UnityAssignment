@@ -69,6 +69,13 @@ public class Controller2D : RayCastController
             DescendSlope(ref DeltaMove);
         }
 
+        // For some reason when you start the game Collisions.below is false when it should be true.
+        // So whenever we are not moving in the Y-axis hence: not jumping or falling, we are on the ground
+        if (DeltaMove.y == 0)
+        {
+            Collisions.Below = true;
+        }
+
         if (DeltaMove.x != 0)
         {
             Collisions.FaceDirection = (int)Mathf.Sign(DeltaMove.x);
