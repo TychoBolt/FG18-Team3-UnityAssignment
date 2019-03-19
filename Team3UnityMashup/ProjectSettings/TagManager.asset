@@ -43,3 +43,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackgroundCloud
+    uniqueID: 1181036215
+    locked: 0
+  - name: BackgroundWall
+    uniqueID: 3633850053
+    locked: 0
+  - name: BackgroundForeground
+    uniqueID: 82389959
+    locked: 0
+  - name: Player
+    uniqueID: 3980676187
+    locked: 0
+  - name: Enemy
+    uniqueID: 2231198701
+    locked: 0
+  - name: Pickups
+    uniqueID: 1228801769
+    locked: 0
+  - name: Foreground
+    uniqueID: 915755751
+    locked: 0
