@@ -21,28 +21,11 @@ public class Player : MonoBehaviour
     public float AccelerationTimeGrounded = 0.1f;
     private float VelocityXSmoothing;
 
-    [HideInInspector]
-    [Header("Wall slide settings")]
-    public float MaxWallSlideSpeed = 3;
-    [HideInInspector]
-    public float WallStickTime = 0.25f;
-    float TimeToWallUnstick;
-
-    [HideInInspector]
-    [Header("Wall jump settings")]
-    public Vector2 WallJumpClimb;
-    [HideInInspector]
-    public Vector2 WallJumpOff;
-    [HideInInspector]
-    public Vector2 WallLeap;
-
     private float MaxJumpVelocity;
     private float MinJumpVelocity;
     private float Gravity;
 
-
     private Vector2 DirectionalInput;
-    private bool WallSliding;
     private int WallDirectionX;
     private Animator animator;
 
@@ -63,40 +46,24 @@ public class Player : MonoBehaviour
         WallDirectionX = (Controller.Collisions.Left) ? -1 : 1;
 
         CalculateVelocity();
-        //HandleWallSliding(); // We are not using wall sliding in the game
-
-
-        // This code is for slopes but interferes with jumping if the code for slopes isn't called / used
-        // Commented out and put Move function in FixedUpdate where it 'should' be
-
-        // by having the Move function in Update instead of FixedUpdate
-        // there was some strange vibrating on the player in the Y-axis 
-
-
-        //Controller.Move(Velocity * Time.deltaTime, DirectionalInput);
-
-        //if (Controller.Collisions.Above || Controller.Collisions.Below)
-        //{
-        //    if (Controller.Collisions.SlidingDownMaxSlope)
-        //    {
-        //        Velocity.y += Controller.Collisions.SlopeNormal.y * -Gravity * Time.deltaTime;
-        //    }
-        //    else
-        //    {
-        //        Velocity.y = 0;
-        //    }
-        //}
+        
     }
 
    private void FixedUpdate()
     {
         Controller.Move(Velocity * Time.deltaTime, DirectionalInput);
-        if (DirectionalInput.x > 0.1 || DirectionalInput.x < -0.1)
+
+        if (DirectionalInput.x > 0 || DirectionalInput.x < 0)
+        {
             animator.SetBool("IsRunning?", true);
+        }
         else
         {
             animator.SetBool("IsRunning?", false);
         }
+
+       
+
     }
 
     public void SetDirectionalInput(Vector2 _DirectionalInput)
@@ -106,81 +73,20 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
-        if (WallSliding)
-        {
-            if (WallDirectionX == DirectionalInput.x)
-            {
-                Velocity.x = -WallDirectionX * WallJumpClimb.x;
-                Velocity.y = WallJumpClimb.y;
-            }
-            else if (DirectionalInput.x == 0)
-            {
-                Velocity.x = -WallDirectionX * WallJumpOff.x;
-                Velocity.y = WallJumpOff.y;
-            }
-            else
-            {
-                Velocity.x = -WallDirectionX * WallLeap.x;
-                Velocity.y = WallLeap.y;
-            }
-        }
+        animator.SetBool("IsJumpStart?", true);     //ALEX
 
         if (Controller.Collisions.Below)
         {
-            if (Controller.Collisions.SlidingDownMaxSlope)
-            {
-                if (DirectionalInput.x != -Mathf.Sign(Controller.Collisions.SlopeNormal.x)) // Not jumping against max slope
-                {
-                    Velocity.y = MaxJumpVelocity * Controller.Collisions.SlopeNormal.y;
-                    Velocity.x = MaxJumpVelocity * Controller.Collisions.SlopeNormal.x;
-                }
-            }
-            else
-            {
-                Velocity.y = MaxJumpVelocity;
-            }
+            Velocity.y = MaxJumpVelocity;
         }
     }
 
     public void OnJumpInputUp()
     {
+        animator.SetBool("IsJumpStart?", false);
         if (Velocity.y > MinJumpVelocity)
         {
             Velocity.y = MinJumpVelocity;
-        }
-    }
-
-    private void HandleWallSliding()
-    {
-        WallSliding = false;
-
-        if ((Controller.Collisions.Left || Controller.Collisions.Right) && !Controller.Collisions.Below && Velocity.y < 0)
-        {
-            WallSliding = true;
-
-            if (Velocity.y < -MaxWallSlideSpeed)
-            {
-                Velocity.y = -MaxWallSlideSpeed;
-            }
-
-            if (TimeToWallUnstick > 0)
-            {
-                Velocity.x = 0;
-                VelocityXSmoothing = 0;
-
-                if (DirectionalInput.x != WallDirectionX && DirectionalInput.x != 0)
-                {
-                    TimeToWallUnstick -= Time.deltaTime;
-                }
-                else
-                {
-                    TimeToWallUnstick = WallStickTime;
-                }
-            }
-            else
-            {
-                TimeToWallUnstick = WallStickTime;
-            }
         }
     }
 
@@ -189,13 +95,50 @@ public class Player : MonoBehaviour
         float TargetVelocityX = DirectionalInput.x * MoveSpeed;
         Velocity.x = Mathf.SmoothDamp(Velocity.x, TargetVelocityX, ref VelocityXSmoothing, (Controller.Collisions.Below) ? AccelerationTimeGrounded : AccelerationTimeAirborne);
 
+        bool Landing = animator.GetBool("IsJumpFall?") ? true : false;
+        bool HittingCeiling = (animator.GetBool("IsJumpStart?") && Controller.Collisions.Above) ? true : false;
+        
+
+        // We hit our head in the ceiling
+        if (HittingCeiling)
+        {
+            // Player is in air so we will fall
+            if (!Controller.Collisions.Below)
+            {
+                animator.SetBool("IsJumpFall?", true);
+
+                Velocity.y += Gravity * Time.deltaTime;
+                if (Velocity.y < MaxGravity)
+                {
+                    Velocity.y = MaxGravity;
+
+                }
+            }
+        }
+
         // If we are falling increase velocity
         if (!Controller.Collisions.Below)
         {
+            animator.SetBool("IsJumpFall?", true);
+
             Velocity.y += Gravity * Time.deltaTime;
             if (Velocity.y < MaxGravity)
             {
                 Velocity.y = MaxGravity;
+
+            }
+        }
+        else
+        {
+            if (Landing)
+            {
+                animator.SetBool("IsJumpLand?", true);
+                animator.SetBool("IsJumpFall?", false);
+            }
+
+            if (!Landing)
+            {
+                animator.SetBool("IsJumpLand?", false);
             }
         }
     }

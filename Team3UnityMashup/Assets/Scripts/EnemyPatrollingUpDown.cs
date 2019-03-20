@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPatrolling : Enemy
+public class EnemyPatrollingUpDown : Enemy
 {
-    bool movingRight = true;
+    bool movingUp = true;
     bool hasFlipped = false;
     public GameObject wayPointOne;
     public GameObject wayPointTwo;
+    //public Transform groundCheckPos;
     public float idleTime;
     bool isIdle = false;
+
+    GameManager gameManager;
     
 
     void Update ()
     {
         if (!isIdle)
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
+            transform.Translate(Vector2.up * speed * Time.deltaTime);
+        
+        //RaycastHit2D groundCheck = Physics2D.Raycast(groundCheckPos.position, Vector2.down, 2f);
+            
+        //if (groundCheck.collider == null || groundCheck.collider.gameObject.layer == 10)
+        //    FlipOnDelay();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -28,12 +36,12 @@ public class EnemyPatrolling : Enemy
 
     void Flip()
     {
-        if (movingRight)
-            transform.eulerAngles = new Vector3(0, 180, 0);
+        if (movingUp)
+            transform.eulerAngles = new Vector3(-180, 0, 0);
         else
             transform.eulerAngles = new Vector3(0, 0, 0);
 
-        movingRight = !movingRight;
+        movingUp = !movingUp;
         hasFlipped = false;
         isIdle = false;
     }
