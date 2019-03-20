@@ -14,7 +14,7 @@ public class SceneSwitcher : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && manager.numberOfKeys == 3)
+        if (other.CompareTag("Player")) //&& manager.numberOfKeys == 3)
         {
             SceneManager.LoadScene(newLevel);
         }

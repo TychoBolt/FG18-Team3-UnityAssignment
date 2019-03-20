@@ -1,15 +1,11 @@
 fileFormatVersion: 2
-guid: 4d17b4e8331d4ec41863043e42fbc4c8
+guid: b56767fb5c73eb244b4778ae95945cb0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: acid_animation_finnish_0
-    21300002: acid_animation_finnish_1
-    21300004: acid_animation_finnish_2
-    21300006: acid_animation_finnish_3
-    21300008: acid_animation_finnish_4
-    21300010: acid_animation_finnish_5
-    21300012: acid_animation_finnish_6
-    21300014: acid_animation_finnish_7
+    21300000: enemy_lef_right_finnish_0
+    21300002: enemy_lef_right_finnish_1
+    21300004: enemy_lef_right_finnish_2
+    21300006: enemy_lef_right_finnish_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -39,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -71,7 +67,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,13 +88,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: acid_animation_finnish_0
+      name: enemy_lef_right_finnish_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,19 +102,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cd3859b1b5ed3a44a5d4a5277fff991
+      spriteID: c984c4ac9963c7c46862f62190bc61f9
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_1
+      name: enemy_lef_right_finnish_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 100
         y: 0
-        width: 128
-        height: 128
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3920c4ff7f1d546459b35658369e3c14
+      spriteID: 7ba8f88f260de9f40a48080093ed9684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_2
+      name: enemy_lef_right_finnish_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 200
         y: 0
-        width: 128
-        height: 128
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +142,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae7f9afb1fb46a4ea8eb14f152ba49e
+      spriteID: 8c2244c997e906949b7ee9c4d1163a3c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_3
+      name: enemy_lef_right_finnish_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 300
         y: 0
-        width: 128
-        height: 128
+        width: 100
+        height: 100
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,87 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec6d3b83c6c6b4e4ca621316604e4822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: acid_animation_finnish_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72a7373a972f0dc4dab1f1167591388c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: acid_animation_finnish_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91d1f85fe27c4c0459bfe4086343314e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: acid_animation_finnish_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b19f489abb1a8848be500567231e956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: acid_animation_finnish_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40f539eb21eac214491565ee4c8e9a60
+      spriteID: f668d05dfb4ccc84994330282cc143c5
       vertices: []
       indices: 
       edges: []
@@ -254,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f29ba92489c87094ea4f1334b3161ab2
+    spriteID: b5e0b4223c0253140a7b9b955701399d
     vertices: []
     indices: 
     edges: []

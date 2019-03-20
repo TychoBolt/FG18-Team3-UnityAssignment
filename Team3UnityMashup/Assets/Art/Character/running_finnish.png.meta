@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: 4d17b4e8331d4ec41863043e42fbc4c8
+guid: 0224825772812fe44811ab62c5e05740
 TextureImporter:
   fileIDToRecycleName:
-    21300000: acid_animation_finnish_0
-    21300002: acid_animation_finnish_1
-    21300004: acid_animation_finnish_2
-    21300006: acid_animation_finnish_3
-    21300008: acid_animation_finnish_4
-    21300010: acid_animation_finnish_5
-    21300012: acid_animation_finnish_6
-    21300014: acid_animation_finnish_7
+    21300000: running_finnish_0
+    21300002: running_finnish_1
+    21300004: running_finnish_2
+    21300006: running_finnish_3
+    21300008: running_finnish_4
+    21300010: running_finnish_5
+    21300012: running_finnish_6
+    21300014: running_finnish_7
+    21300016: running_finnish_8
+    21300018: running_finnish_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -71,7 +73,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,13 +94,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: acid_animation_finnish_0
+      name: running_finnish_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,19 +108,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cd3859b1b5ed3a44a5d4a5277fff991
+      spriteID: 461f1be0f5cc452489f6ca96db62387a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_1
+      name: running_finnish_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 120
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,19 +128,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3920c4ff7f1d546459b35658369e3c14
+      spriteID: e36fe4461168bcb41939f154a49f6b74
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_2
+      name: running_finnish_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 240
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +148,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae7f9afb1fb46a4ea8eb14f152ba49e
+      spriteID: bb5638e4178b8aa498bca1412ffe4d0a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_3
+      name: running_finnish_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 360
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,19 +168,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec6d3b83c6c6b4e4ca621316604e4822
+      spriteID: 4433154ce6e585c43b2a7ea5a353df49
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_4
+      name: running_finnish_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 480
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,19 +188,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72a7373a972f0dc4dab1f1167591388c
+      spriteID: 8fc9f2d7549978f4d97269e23d4ad1b3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_5
+      name: running_finnish_5
       rect:
         serializedVersion: 2
-        x: 640
+        x: 600
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,19 +208,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91d1f85fe27c4c0459bfe4086343314e
+      spriteID: a1ab2ca5f0ba73c42bbe2815e2f77a95
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_6
+      name: running_finnish_6
       rect:
         serializedVersion: 2
-        x: 768
+        x: 720
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,19 +228,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b19f489abb1a8848be500567231e956
+      spriteID: 952401176c54fa849b02744d282a09f3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_7
+      name: running_finnish_7
       rect:
         serializedVersion: 2
-        x: 896
+        x: 840
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,7 +248,47 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40f539eb21eac214491565ee4c8e9a60
+      spriteID: b1d198eaafd59a14a91be9655205510d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_finnish_8
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4dd7b5cc1a8e2549bac0e764d9f9892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: running_finnish_9
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ba3de0cf45cc946a3e3f23a3a4c994
       vertices: []
       indices: 
       edges: []
@@ -254,7 +296,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f29ba92489c87094ea4f1334b3161ab2
+    spriteID: 9f2504019410d5f48afb2128ff6dd30b
     vertices: []
     indices: 
     edges: []

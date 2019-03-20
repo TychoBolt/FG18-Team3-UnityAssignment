@@ -1,15 +1,12 @@
 fileFormatVersion: 2
-guid: 4d17b4e8331d4ec41863043e42fbc4c8
+guid: 590cd7e934b3a7c48a829ab5dd3b2cc8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: acid_animation_finnish_0
-    21300002: acid_animation_finnish_1
-    21300004: acid_animation_finnish_2
-    21300006: acid_animation_finnish_3
-    21300008: acid_animation_finnish_4
-    21300010: acid_animation_finnish_5
-    21300012: acid_animation_finnish_6
-    21300014: acid_animation_finnish_7
+    21300000: enemy_ghost_finnish_0
+    21300002: enemy_ghost_finnish_1
+    21300004: enemy_ghost_finnish_2
+    21300006: enemy_ghost_finnish_3
+    21300008: enemy_ghost_finnish_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -39,7 +36,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -71,7 +68,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -82,7 +79,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -92,13 +89,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: acid_animation_finnish_0
+      name: enemy_ghost_finnish_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,19 +103,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cd3859b1b5ed3a44a5d4a5277fff991
+      spriteID: 102458062d4f37d44a19838e0d5b9503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_1
+      name: enemy_ghost_finnish_1
       rect:
         serializedVersion: 2
-        x: 128
+        x: 120
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -126,19 +123,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3920c4ff7f1d546459b35658369e3c14
+      spriteID: fff1250d2f339424ab8ff6886aa4eeda
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_2
+      name: enemy_ghost_finnish_2
       rect:
         serializedVersion: 2
-        x: 256
+        x: 240
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +143,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ae7f9afb1fb46a4ea8eb14f152ba49e
+      spriteID: 0f3ac75caa4995b44831c7aabc794288
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_3
+      name: enemy_ghost_finnish_3
       rect:
         serializedVersion: 2
-        x: 384
+        x: 360
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,19 +163,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec6d3b83c6c6b4e4ca621316604e4822
+      spriteID: b2cf90a931c494e44a6c324d87829f9b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: acid_animation_finnish_4
+      name: enemy_ghost_finnish_4
       rect:
         serializedVersion: 2
-        x: 512
+        x: 480
         y: 0
-        width: 128
-        height: 128
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -186,67 +183,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72a7373a972f0dc4dab1f1167591388c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: acid_animation_finnish_5
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 91d1f85fe27c4c0459bfe4086343314e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: acid_animation_finnish_6
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b19f489abb1a8848be500567231e956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: acid_animation_finnish_7
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40f539eb21eac214491565ee4c8e9a60
+      spriteID: 0c4c9defe8b550d46baf37944a221eb6
       vertices: []
       indices: 
       edges: []
@@ -254,7 +191,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f29ba92489c87094ea4f1334b3161ab2
+    spriteID: 6e03501d63036af4e976e2e22d58c3bf
     vertices: []
     indices: 
     edges: []

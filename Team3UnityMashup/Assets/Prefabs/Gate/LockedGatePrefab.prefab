@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5403375657643080492}
   - component: {fileID: 2246706483696224673}
   - component: {fileID: 7066918720438336779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LockedGatePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

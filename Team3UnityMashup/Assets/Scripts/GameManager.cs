@@ -14,13 +14,18 @@ public class GameManager : MonoBehaviour
     public Text lifeText;
     public Text scoreText;
 
+    public int scoreForLife1;
+    public int scoreForLife2;
+    public int scoreForLife3;
+    public int scoreForLife4;
+
     GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        lifeText.text = "LIFE: " + playerLives;
-        scoreText.text = "SCORE: " + currentScore;
+        lifeText.text = " " + playerLives;
+        scoreText.text = " " + currentScore;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -42,7 +47,7 @@ public class GameManager : MonoBehaviour
             player.transform.position = playerSpawnPoint.position;
             player.gameObject.SetActive(true);
 
-            lifeText.text = "LIFE: " + playerLives;
+            lifeText.text = " " + playerLives;
         }
         else
         {
@@ -55,10 +60,34 @@ public class GameManager : MonoBehaviour
     public void AddScore(int scoreToAdd)
     {
         currentScore += scoreToAdd;
-        scoreText.text = "SCORE: " + currentScore;
+        scoreText.text = " " + currentScore;
+
+        if (currentScore == scoreForLife1)
+        {
+            playerLives += 1;
+            lifeText.text = " " + playerLives;
+        }
+
+        if (currentScore == scoreForLife2)
+        {
+            playerLives += 1;
+            lifeText.text = " " + playerLives;
+        }
+
+        if (currentScore == scoreForLife3)
+        {
+            playerLives += 1;
+            lifeText.text = " " + playerLives;
+        }
+
+        if (currentScore == scoreForLife4)
+        {
+            playerLives += 1;
+            lifeText.text = " " + playerLives;
+        }
     }
 
-    public void AddKey()
+        public void AddKey()
     {
         numberOfKeys += 1;
         Debug.Log(numberOfKeys);
