@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int currentScore;
 
     public int numberOfKeys;
-
+   
     public Text lifeText;
     public Text scoreText;
 
@@ -69,5 +69,7 @@ public class GameManager : MonoBehaviour
         numberOfKeys -= 3;
         Debug.Log(numberOfKeys);
     }
+
+    public bool isAllKeysCollected() => GameObject.FindObjectsOfType(typeof(OnTriggeredKey)).Length == 0;
 }
 

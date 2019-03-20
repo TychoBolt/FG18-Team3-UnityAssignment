@@ -10,7 +10,6 @@ public class EnemyPatrolling : Enemy
     public GameObject wayPointTwo;
     public float idleTime;
     bool isIdle = false;
-    
 
     void Update ()
     {

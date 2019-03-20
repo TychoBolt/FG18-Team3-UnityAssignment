@@ -1,33 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gate : MonoBehaviour
 {
-    int totalNumberOfPickups;
-    GameManager manager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        manager = GameObject.FindObjectOfType<GameManager>();
-      //  totalNumberOfPickups = GameObject.FindObjectsOfType(typeof(PointPickup)).Length;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string nextLevel;
 
     void OnTriggerStay2D(Collider2D other)
     {
-        // if (other.gameObject.tag.Equals("Player") && manager.currentScore == (totalNumberOfPickups * 50))
-        if (other.gameObject.tag.Equals("Player") && manager.numberOfKeys == 3)
+        if (other.gameObject.tag.Equals("Player") && GameObject.FindObjectOfType<GameManager>().isAllKeysCollected())
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("Open gate");
                 FindObjectOfType<GameManager>().ResetKeys();
+                SceneManager.LoadScene(nextLevel);
                 Destroy(gameObject);
             }
         }
