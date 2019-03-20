@@ -14,13 +14,14 @@ public class GameManager : MonoBehaviour
     public Text lifeText;
     public Text scoreText;
 
-    public GameObject thePlayer;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         lifeText.text = "LIFE: " + playerLives;
         scoreText.text = "SCORE: " + currentScore;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Awake()
@@ -30,22 +31,24 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer()
     {
+        if (player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+
         playerLives -= 1;
 
         if (playerLives >= 0)
         {
-            thePlayer.gameObject.SetActive(false);
-            thePlayer.transform.position = playerSpawnPoint.position;
-            thePlayer.gameObject.SetActive(true);
+            player.gameObject.SetActive(false);
+            player.transform.position = playerSpawnPoint.position;
+            player.gameObject.SetActive(true);
 
             lifeText.text = "LIFE: " + playerLives;
         }
         else
         {
-            thePlayer.gameObject.SetActive(false);
+            player.gameObject.SetActive(false);
 
             lifeText.text = "Game Over";
-
         }
     }
 

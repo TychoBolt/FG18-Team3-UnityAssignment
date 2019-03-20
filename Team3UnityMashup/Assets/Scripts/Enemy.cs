@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("Hurt enemy");
+            FindObjectOfType<GameManager>().KillPlayer();
         }
     }
 
@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("Hurt enemy");
+            FindObjectOfType<GameManager>().KillPlayer();
         }
     }
 }
