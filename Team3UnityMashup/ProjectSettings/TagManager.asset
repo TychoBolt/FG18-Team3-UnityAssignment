@@ -59,8 +59,17 @@ TagManager:
   - name: Enemy
     uniqueID: 2231198701
     locked: 0
+  - name: Hazards
+    uniqueID: 2622036085
+    locked: 0
+  - name: Tiles
+    uniqueID: 3909180957
+    locked: 0
   - name: Pickups
     uniqueID: 1228801769
+    locked: 0
+  - name: Gate
+    uniqueID: 1447243657
     locked: 0
   - name: Foreground
     uniqueID: 915755751
