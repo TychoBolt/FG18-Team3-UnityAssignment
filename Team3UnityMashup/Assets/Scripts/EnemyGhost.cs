@@ -7,6 +7,7 @@ public class EnemyGhost : Enemy
     Transform player;
     public float spawnDelay = 5;
     bool isActive = false;
+    bool facingRight = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,11 @@ public class EnemyGhost : Enemy
 
         if (isActive)
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+
+
+        Vector3 relativePoint = transform.InverseTransformPoint(player.position);
+        if (relativePoint.x < 0.0)
+            Flip();
     }
 
     void SetActive(bool active)
@@ -30,5 +36,15 @@ public class EnemyGhost : Enemy
         GetComponent<Renderer>().enabled = active;
         GetComponent<CircleCollider2D>().enabled = active;
         isActive = active;
+    }
+
+    void Flip()
+    {
+        if (facingRight)
+            transform.eulerAngles = new Vector3(0, 180, 0);
+        else
+            transform.eulerAngles = new Vector3(0, 0, 0);
+
+        facingRight = !facingRight;
     }
 }

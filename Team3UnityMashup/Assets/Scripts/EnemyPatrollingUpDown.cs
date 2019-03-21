@@ -8,9 +8,9 @@ public class EnemyPatrollingUpDown : Enemy
     bool hasFlipped = false;
     public GameObject wayPointOne;
     public GameObject wayPointTwo;
-    //public Transform groundCheckPos;
     public float idleTime;
     bool isIdle = false;
+    Vector2 direction = Vector2.up;
 
     GameManager gameManager;
     
@@ -18,12 +18,7 @@ public class EnemyPatrollingUpDown : Enemy
     void Update ()
     {
         if (!isIdle)
-            transform.Translate(Vector2.up * speed * Time.deltaTime);
-        
-        //RaycastHit2D groundCheck = Physics2D.Raycast(groundCheckPos.position, Vector2.down, 2f);
-            
-        //if (groundCheck.collider == null || groundCheck.collider.gameObject.layer == 10)
-        //    FlipOnDelay();
+            transform.Translate(direction * speed * Time.deltaTime);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -36,10 +31,7 @@ public class EnemyPatrollingUpDown : Enemy
 
     void Flip()
     {
-        if (movingUp)
-            transform.eulerAngles = new Vector3(-180, 0, 0);
-        else
-            transform.eulerAngles = new Vector3(0, 0, 0);
+        direction *= -1;
 
         movingUp = !movingUp;
         hasFlipped = false;
