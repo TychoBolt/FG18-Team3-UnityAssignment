@@ -38,7 +38,7 @@ public class Weapon : MonoBehaviour
             Right = !Left;
         }
 
-        if (Dir == new Vector2(0f, 1f))
+        if (Dir.y > 0)
         {
             WeaponFirePoint.localPosition = WeaponUp;
             Up = true;
