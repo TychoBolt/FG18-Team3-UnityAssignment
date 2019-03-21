@@ -12,6 +12,11 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
+
         Vector2 DirectionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _Player.SetDirectionalInput(DirectionalInput);
 
