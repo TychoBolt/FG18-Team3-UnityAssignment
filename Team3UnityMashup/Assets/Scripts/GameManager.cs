@@ -99,7 +99,6 @@ public class GameManager : MonoBehaviour
     {
         numberOfKeys -= 3;
         Debug.Log(numberOfKeys);
-        gateText.text = "";
     }
 
     public void ShowGateText()
