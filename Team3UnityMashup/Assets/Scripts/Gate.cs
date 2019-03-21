@@ -30,6 +30,7 @@ public class Gate : MonoBehaviour
             {
                 Debug.Log("Open gate");
                 FindObjectOfType<GameManager>().ResetKeys();
+                FindObjectOfType<GameManager>().HideGateText();
                 Destroy(gameObject);
             }
         }
