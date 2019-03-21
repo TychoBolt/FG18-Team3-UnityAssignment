@@ -26,7 +26,7 @@ public class Gate : MonoBehaviour
         {
             FindObjectOfType<GameManager>().ShowGateText();
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetButtonDown("Activate"))
             {
                 Debug.Log("Open gate");
                 FindObjectOfType<GameManager>().ResetKeys();
