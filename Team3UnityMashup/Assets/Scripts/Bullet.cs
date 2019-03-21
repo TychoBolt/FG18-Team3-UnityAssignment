@@ -18,7 +18,12 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage();
             Destroy(gameObject, 0.01f);
         }
-        else if (HitInfo.name.Equals("Tilemap"))
+        else if (HitInfo.name.Equals("Platform Tiles"))
+        {
+            Destroy(gameObject, 0.01f);
+        }
+
+        else if (HitInfo.name.Equals("Frame"))
         {
             Destroy(gameObject, 0.01f);
         }
