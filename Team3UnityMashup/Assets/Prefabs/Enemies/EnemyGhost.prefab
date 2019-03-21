@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2147483647
   speed: 2
-  spawnDelay: 5
+  spawnDelay: 30
 --- !u!114 &2626976460732972444
 MonoBehaviour:
   m_ObjectHideFlags: 0
