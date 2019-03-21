@@ -24,6 +24,8 @@ public class Gate : MonoBehaviour
         // if (other.gameObject.tag.Equals("Player") && manager.currentScore == (totalNumberOfPickups * 50))
         if (other.gameObject.tag.Equals("Player") && manager.numberOfKeys == 3)
         {
+            FindObjectOfType<GameManager>().ShowGateText();
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Open gate");
@@ -31,5 +33,10 @@ public class Gate : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        FindObjectOfType<GameManager>().HideGateText();
     }
 }

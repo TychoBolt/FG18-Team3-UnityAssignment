@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     public Text lifeText;
     public Text scoreText;
+    public Text gateText;
 
     public int scoreForLife1;
     public int scoreForLife2;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     {
         lifeText.text = " " + playerLives;
         scoreText.text = " " + currentScore;
+        gateText.text = "";
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -97,6 +99,16 @@ public class GameManager : MonoBehaviour
     {
         numberOfKeys -= 3;
         Debug.Log(numberOfKeys);
+    }
+
+    public void ShowGateText()
+    {
+        gateText.text = "Press B Button to open Gate";
+    }
+
+    public void HideGateText()
+    {
+        gateText.text = "";
     }
 }
 
