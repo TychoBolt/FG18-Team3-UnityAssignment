@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    int totalNumberOfPickups;
     GameManager manager;
     private Animator animator;
 
@@ -13,7 +12,7 @@ public class Gate : MonoBehaviour
     {
         manager = GameObject.FindObjectOfType<GameManager>();
         animator = GetComponent<Animator>();
-        //  totalNumberOfPickups = GameObject.FindObjectsOfType(typeof(PointPickup)).Length;
+
     }
 
     // Update is called once per frame
@@ -37,8 +36,7 @@ public class Gate : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        // if (other.gameObject.tag.Equals("Player") && manager.currentScore == (totalNumberOfPickups * 50))
-        if (other.gameObject.tag.Equals("Player") && manager.numberOfKeys == 3)
+        if (other.gameObject.tag.Equals("Player") && GameObject.FindObjectsOfType(typeof(OnTriggeredKey)).Length == 0)
         {
             FindObjectOfType<GameManager>().ShowGateText();
 
