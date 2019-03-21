@@ -6,17 +6,33 @@ public class Gate : MonoBehaviour
 {
     int totalNumberOfPickups;
     GameManager manager;
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         manager = GameObject.FindObjectOfType<GameManager>();
-      //  totalNumberOfPickups = GameObject.FindObjectsOfType(typeof(PointPickup)).Length;
+        animator = GetComponent<Animator>();
+        //  totalNumberOfPickups = GameObject.FindObjectsOfType(typeof(PointPickup)).Length;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (manager.numberOfKeys == 1)
+        {
+            animator.SetBool("OneGem?", true);
+        }
+
+        if (manager.numberOfKeys == 2)
+        {
+            animator.SetBool("TwoGem?", true);
+        }
+
+        if (manager.numberOfKeys == 3)
+        {
+            animator.SetBool("ThreeGem?", true);
+        }
     }
 
     void OnTriggerStay2D(Collider2D other)
