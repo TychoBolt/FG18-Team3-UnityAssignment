@@ -47,4 +47,7 @@ public class EnemyGhost : Enemy
 
         facingRight = !facingRight;
     }
+
+    public override void TakeDamage() { }
+
 }
