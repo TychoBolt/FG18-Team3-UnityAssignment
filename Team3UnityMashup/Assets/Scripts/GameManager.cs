@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
 
         playerLives -= 1;
 
-        if (playerLives >= 0)
+        if (playerLives >= 1)
         {
             player.gameObject.SetActive(false);
             player.transform.position = playerSpawnPoint.position;
