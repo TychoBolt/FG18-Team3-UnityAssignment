@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     public Text lifeText;
     public Text scoreText;
     public Text gateText;
+    public Image health;
+    public Image coins;
 
     public int scoreForLife1;
     public int scoreForLife2;
@@ -54,8 +57,15 @@ public class GameManager : MonoBehaviour
         else
         {
             player.gameObject.SetActive(false);
+            SceneManager.LoadScene("GameOver");
+            Object.Destroy(GetComponent<GameManager>());
+            lifeText.enabled = false;
+            scoreText.enabled = false;
+            health.enabled = false;
+            coins.enabled = false;
 
-            lifeText.text = "Game Over";
+            lifeText.text = "0";
+            
         }
     }
 

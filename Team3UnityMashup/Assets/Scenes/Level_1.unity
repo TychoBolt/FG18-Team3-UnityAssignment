@@ -6195,7 +6195,7 @@ Tilemap:
   - first: {x: -1, y: 5, z: 0}
     second:
       m_TileIndex: 17
-      m_TileSpriteIndex: 18
+      m_TileSpriteIndex: 25
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -6636,7 +6636,7 @@ Tilemap:
   - first: {x: -5, y: 9, z: 0}
     second:
       m_TileIndex: 14
-      m_TileSpriteIndex: 17
+      m_TileSpriteIndex: 18
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -6804,10 +6804,10 @@ Tilemap:
     m_Data: {fileID: 21300078, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300184, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300152, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300020, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300096, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
   - m_RefCount: 1
@@ -6820,8 +6820,8 @@ Tilemap:
     m_Data: {fileID: 21300056, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
   - m_RefCount: 13
     m_Data: {fileID: 21300058, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300020, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300026, guid: 4b55383a56c7df94598673c0755d979e, type: 3}
   - m_RefCount: 14
@@ -13165,6 +13165,8 @@ MonoBehaviour:
   lifeText: {fileID: 719537851}
   scoreText: {fileID: 440904294}
   gateText: {fileID: 1534214096}
+  health: {fileID: 1741355863}
+  coins: {fileID: 2096634650}
   scoreForLife1: 5
   scoreForLife2: 10
   scoreForLife3: 15
