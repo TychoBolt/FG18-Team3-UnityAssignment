@@ -22,7 +22,13 @@ public class SceneSwitcher : MonoBehaviour
     }
 
 
-   public void GotoLevel_1Scene()
+    public void QuitGame()
+    {
+        Debug.Log("has quit game");
+        Application.Quit();
+    }
+
+    public void GotoLevel_1Scene()
     {
         SceneManager.LoadScene("Level_1");
     }

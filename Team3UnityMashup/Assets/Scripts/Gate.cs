@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gate : MonoBehaviour
 {
@@ -38,15 +39,48 @@ public class Gate : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player") && GameObject.FindObjectsOfType(typeof(OnTriggeredKey)).Length == 0)
         {
-            FindObjectOfType<GameManager>().ShowGateText();
-
-            if (Input.GetButtonDown("Activate"))
+            if (SceneManager.GetActiveScene().name == "Level_1")
             {
-                Debug.Log("Open gate");
-                FindObjectOfType<GameManager>().ResetKeys();
-                FindObjectOfType<GameManager>().HideGateText();
-                Destroy(gameObject);
+                FindObjectOfType<GameManager>().ShowGateText();
+
+                if (Input.GetButtonDown("Activate"))
+                {
+                    Debug.Log("Open gate");
+                    FindObjectOfType<GameManager>().ResetKeys();
+                    FindObjectOfType<GameManager>().HideGateText();
+                    Destroy(gameObject);
+                }
             }
+
+            else if (SceneManager.GetActiveScene().name == "Level_2")
+            {
+                FindObjectOfType<GameManager>().ShowGateText();
+
+                if (Input.GetButtonDown("Activate"))
+                {
+                    Debug.Log("Open gate");
+                    FindObjectOfType<GameManager>().ResetKeys();
+                    FindObjectOfType<GameManager>().HideGateText();
+                    Destroy(gameObject);
+                }
+            }
+
+            else if (SceneManager.GetActiveScene().name == "Level_WinRoom")
+            {
+                FindObjectOfType<GameManager>().ShowEndGateText();
+
+                if (Input.GetButtonDown("Activate"))
+                {
+                    Debug.Log("Open gate");
+                    FindObjectOfType<GameManager>().ResetKeys();
+                    FindObjectOfType<GameManager>().HideEndGateText();
+                    Destroy(gameObject);
+                }
+            }
+
+
+
+       
         }
     }
 

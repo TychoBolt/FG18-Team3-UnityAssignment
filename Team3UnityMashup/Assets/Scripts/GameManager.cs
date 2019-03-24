@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public Text lifeText;
     public Text scoreText;
     public Text gateText;
+    public Text endgateText;
     public Image health;
     public Image coins;
 
@@ -113,10 +114,20 @@ public class GameManager : MonoBehaviour
 
     public void ShowGateText()
     {
-        gateText.text = "Press B Button to open Gate";
+        gateText.text = "Press B Button to Continue to Next Level";
     }
 
     public void HideGateText()
+    {
+        gateText.text = "";
+    }
+
+    public void ShowEndGateText()
+    {
+        gateText.text = "Press B Button to Exit Game";
+    }
+
+    public void HideEndGateText()
     {
         gateText.text = "";
     }

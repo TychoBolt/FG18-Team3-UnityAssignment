@@ -13165,6 +13165,7 @@ MonoBehaviour:
   lifeText: {fileID: 719537851}
   scoreText: {fileID: 440904294}
   gateText: {fileID: 1534214096}
+  endgateText: {fileID: 0}
   health: {fileID: 1741355863}
   coins: {fileID: 2096634650}
   scoreForLife1: 5
